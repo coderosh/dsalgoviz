@@ -89,7 +89,7 @@
         <a class="nav-link" href="/learn" id="learn">Learn</a>
       </li>
       <% if (user) { %>
-      <li class="nav-item <%= page === 'learn' ? 'active' : '' %>">
+      <li class="nav-item <%= page === 'quiz' ? 'active' : '' %>">
         <a
           class="nav-link"
           href="<%= user?.role === 'teacher' ? '/create-quiz': '/quiz'  %>"
