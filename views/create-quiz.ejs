@@ -15,7 +15,9 @@
   </head>
 
   <body>
-    <%- include("partials/navbar.ejs", {page: "quiz"}) %>
+    <!-- prettier-ignore -->
+    <%- include("partials/navbar.ejs", {page: typeof page === "string" ? page : "quiz"}) %>
+
     <main>
       <div class="toptext">
         <h1 style="color: #353535">Add Your Quiz Questions</h1>

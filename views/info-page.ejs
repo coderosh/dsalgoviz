@@ -13,7 +13,9 @@
   </head>
 
   <body>
-    <%- include("partials/navbar.ejs", {page: "info"}) %>
+    <%- include("partials/navbar.ejs", {page: typeof page === "string" ? page :
+    "info"}) %>
+
     <main>
       <div class="toptext">
         <h1 style="color: #353535"><%= info %></h1>

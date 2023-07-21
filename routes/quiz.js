@@ -13,13 +13,19 @@ router
       if (!res.locals.isLoggedIn) return res.redirect("/login");
 
       if (res.locals.user.quizAttempt) {
-        return res.render("info-page", { info: "Quiz already taken" });
+        return res.render("info-page", {
+          info: "Quiz already taken",
+          page: "quiz",
+        });
       }
 
       const questions = await QuizQuestion.find();
 
       if (questions.length === 0) {
-        return res.render("info-page", { info: "Question isn't created at" });
+        return res.render("info-page", {
+          page: "quiz",
+          info: "Question isn't created at",
+        });
       }
 
       res.render("quiz", { data: questions });
@@ -37,7 +43,7 @@ router
       const quizes = await QuizQuestion.find();
 
       if (quizes.length !== Object.keys(req.body).length) {
-        return res.render("/quiz");
+        return res.render("quiz");
       }
 
       quizes.forEach((quiz, i) => {
@@ -135,7 +141,10 @@ router
   .get(async (req, res) => {
     try {
       if ((await QuizQuestion.find()).length > 0) {
-        return res.render("info-page", { info: "Question already created" });
+        return res.render("info-page", {
+          info: "Question already created",
+          page: "quiz",
+        });
       }
     } catch (err) {}
     res.render("create-quiz");
