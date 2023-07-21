@@ -42,7 +42,7 @@
 
       <div class="col2">
         <form action="/logout" method="POST">
-          <button class="btn1" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Logout</button>
+          <button class="btn1" type="submit">Logout</button>
         </form>
 
         <!-- <h1 style="color:#4B50B9;padding: 25px;">Algorithms</h1>
@@ -169,48 +169,55 @@
 
 
       <div class="col2" style="max-width: 650px;">
-        <div class="row" style="padding-left: 0px;">
-          <div class="col-md-auto">
-            <div class="card mb-4" style="max-width: 650px; background-color: #4b50b954; border-radius: 10px; box-shadow: 0px 0px 7px #4B50B9A0;">
-              <div class="row g-0">
-                <div class="col-md-auto">
-                  <h1 class="card-title" style="padding: 22px; padding-bottom: 3px; font-size: 50px;text-align: center;"><%= (user.algoViewed || []).length %></h1>
+          <div class="row" style="padding-left: 0px;">
+            <div class="col-md-auto">
+              <div class="card mb-4" style="max-width: 650px; background-color: #4b50b954; border-radius: 10px; box-shadow: 0px 0px 7px #4B50B9A0;">
+                <div class="row g-0">
+                  <div class="col-md-auto">
+                    <h1 class="card-title" style="padding: 22px; padding-bottom: 3px; font-size: 50px;text-align: center;"><%= (user.algoViewed || []).length %></h1>
+                  </div>
+                  <div class="col-md-auto">
+                    <div class="card-body">
+                      <h4 class="card-title" style="padding: 10px; padding-bottom: 3px; text-align: center;">Algorithms Viewed</h4>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-auto">
-                  <div class="card-body">
-                    <h4 class="card-title" style="padding: 10px; padding-bottom: 3px; text-align: center;">Algorithms Viewed</h4>
+              </div>
+            </div>
+            <div class="col-md-auto">
+              <div class="card mb-4" style="max-width: 650px; background-color: #4b50b954; border-radius: 10px;box-shadow: 0px 0px 7px #4B50B9A0;">
+                <div class="row g-0">
+                  <div class="col-md-auto">
+                    <h1 class="card-title" style="padding: 22px; padding-bottom: 3px;font-size: 50px;text-align: center;"><%= 8 - (user.algoViewed || []).length %></h1>
+                  </div>
+                  <div class="col-md-auto">
+                    <div class="card-body">
+                      <h4 class="card-title" style="padding: 10px; padding-bottom: 3px; text-align: center;">Algorithms Remaining</h4>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-auto">
-            <div class="card mb-4" style="max-width: 650px; background-color: #4b50b954; border-radius: 10px;box-shadow: 0px 0px 7px #4B50B9A0;">
-              <div class="row g-0">
-                <div class="col-md-auto">
-                  <h1 class="card-title" style="padding: 22px; padding-bottom: 3px;font-size: 50px;text-align: center;"><%= 8 - (user.algoViewed || []).length %></h1>
-                </div>
-                <div class="col-md-auto">
-                  <div class="card-body">
-                    <h4 class="card-title" style="padding: 10px; padding-bottom: 3px; text-align: center;">Algorithms Remaining</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-
-
 
       <div class="card mb-3" style="max-width: 650px; background-color: #4b50b954;box-shadow: 0px 0px 7px #4B50B9A0;">
         <div class="row g-0">
           <div class="col-md-8" style="display: flex;align-items: center;">
             <div class="card-body" style="padding-left: 40px">
-              <h2 class="card-title" style="color: #4B50B9; padding-bottom: 5px;">Quiz Score</h2>
-              <p class="card-text"><small class="text-muted">Preview the scores of the
+              <h2 class="card-title" style="color: #4B50B9; padding-bottom: 5px;">
+                <%= user?.role === "student" ? "Quiz Score" : "Create Quiz" %>
+              </h2>
+              <% if (user?.role === "student") { %>
+                <p class="card-text"><small class="text-muted">Preview the scores of the
                   quizzes you have taken.</small></p>
+
               <button class="btn1" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View Score</button>
+
+              <% }else { %>
+              <button style="text-decoration: none;" onclick="location.href='/create-quiz'" class="btn1">Create Quiz</button>
+              <% } %>
+
             </div>
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
