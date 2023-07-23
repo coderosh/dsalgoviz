@@ -11,7 +11,23 @@
   <link rel="stylesheet" href="/css/profile.css" />
 
   <link rel="icon" href="/images/title_logo.png" type="image/icon type" />
- 
+ <style>
+  .btn2 {
+  border: 2px solid #4b50b9;
+  padding: 15px 30px 15px 30px;
+  width: 100%;
+  border-radius: 10px;
+  color: #4b50b9;
+  background-color: white;
+  width: max-content;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn2:hover {
+  color: white;
+  background-color: #4b50b9;
+}
+ </style>
 </head>
 
 <body>
@@ -41,9 +57,22 @@
 
 
       <div class="col2">
-        <form action="/logout" method="POST">
-          <button class="btn1" type="submit">Logout</button>
+  
+
+        <form style="display: flex;" action="/fileupload" enctype="multipart/form-data" method="POST">
+         <div>
+          <label for="file">Select Resource</label>
+          <input style="margin-bottom: 10px; display: block;" type="file" name="file" id="file"> 
+         </div>
+          <button style="padding: 5px; height: 50px; width: 150px;" class="btn2" type="submit">Upload Resource</button>
         </form>
+
+        <br />
+
+        <form action="/logout" method="POST">
+          <button style="padding: 5px; height: 50px; width: 120px;" class="btn2" type="submit">Logout</button>
+        </form>
+
 
         <!-- <h1 style="color:#4B50B9;padding: 25px;">Algorithms</h1>
         <div class="row" style="padding-left: 10px; align-items: flex-start; padding-bottom: 10px;">
@@ -215,7 +244,7 @@
               <button class="btn1" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View Score</button>
 
               <% }else { %>
-              <button style="text-decoration: none;" onclick="location.href='/create-quiz'" class="btn1">Create Quiz</button>
+              <button  style="padding: 5px; height: 50px; width: 150px;" onclick="location.href='/create-quiz'" class="btn2">Create Quiz</button>
               <% } %>
 
             </div>

@@ -1,3 +1,4 @@
+import fs from "fs/promises";
 import { Router } from "express";
 
 const router = Router();
@@ -12,10 +13,15 @@ const resources = {
   hash: "hashing.pdf",
 };
 
-router.get("/resources", (req, res) => {
+router.get("/resources", async (req, res) => {
   if (!res.locals.isLoggedIn) return res.redirect("/login");
 
-  res.render("resources");
+  let uploads = [];
+  try {
+    uploads = await fs.readdir("uploads");
+  } catch (err) {}
+
+  res.render("resources", { uploads });
 });
 
 router.get("/resources/:resource", (req, res) => {

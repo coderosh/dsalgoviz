@@ -24,7 +24,7 @@ router
       if (questions.length === 0) {
         return res.render("info-page", {
           page: "quiz",
-          info: "Question isn't created at",
+          info: "Question isn't created yet",
         });
       }
 

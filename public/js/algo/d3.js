@@ -88,7 +88,7 @@
             .attr("fill", "#000")
             .attr(r, d * g)
             .attr(v, 0.5)
-            .attr("dy", t === bf ? "0em" : t === Mf ? "0.71em" : "0.32em")
+            .attr("dy", t === bf ? "0em" : t === Mf ? "0.2em" : "0.32em")
         )),
         e !== w &&
           ((M = M.transition(e)),

@@ -52,6 +52,10 @@ main {
   transition: all 0.2s ease-in-out;
 }
 
+.btn:hover {
+  color: white;
+  background-color: #4b50b9;
+}
 .submit {
   width: auto;
 }
@@ -64,10 +68,6 @@ main {
   padding: 8px 5px 8px 5px;
 }
 
-.btn:hover {
-  color: white;
-  background-color: #4b50b9;
-}
 .row .doc {
   display: flex;
   justify-content: space-between;
@@ -133,4 +133,34 @@ main {
   margin: 60px 0px 0px 0px;
   text-align: center;
   color: #4b50b9;
+}
+
+
+.more_file{
+  display: flex;
+  justify-content: space-between;
+  background-color: #d2d3ff;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.fname{
+  width: 50%;
+  padding: 10px 25px 10px 25px;
+
+  /* padding: 10px; */
+}
+
+.fbtn{
+  width: fit-content;
+  padding: 10px 25px 10px 25px;
+  
+}
+
+.fbtns, .icon-fname{
+  display: flex;
+  gap: 10px;
 }

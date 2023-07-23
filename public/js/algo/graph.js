@@ -40,7 +40,7 @@ function drawTree() {
       ((t = bst.root.json),
       (e = { top: 40, right: 90, bottom: 50, left: 90 }),
       (n = window.innerWidth - 10 - e.left - e.right),
-      (r = window.innerHeight - 45 - e.top - e.bottom),
+      (r = window.innerHeight - 250 - e.top - e.bottom),
       (a = d3.tree().size([n, r])),
       (o = d3.hierarchy(t)),
       (o = a(o)),
@@ -98,7 +98,7 @@ function drawTree() {
         .attr("transform", function (t) {
           return "translate(" + t.x + "," + t.y + ")";
         })),
-      l.append("circle").attr("r", 15),
+      l.append("circle").attr("r", 30),
       l
         .append("text")
         .attr("dy", ".35em")

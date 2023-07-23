@@ -8,6 +8,7 @@
     <style>
       * {
         font-family: "Ropa Sans", sans-serif;
+        font-size: medium;
       }
       #stack {
         display: flex;
@@ -84,11 +85,27 @@
       input[type="button"] {
         padding: 5px 10px 5px 10px;
       }
+      
+      .btn {
+      border: 2px solid #4b50b9;
+      padding: 20px;
+      width: fit-content;
+      border-radius: 10px;
+      color: #4b50b9;
+      transition: all 0.2s ease-in-out;
+      background-color: white;
+      }
+
+      .btn:hover {
+        cursor: pointer;
+        color: white;
+        background-color: #4b50b9;
+      }
     </style>
   </head>
   <body>
     <div style="text-align: center; padding-top: 1rem; color: #4b50b9">
-      <H1>Stack Visualization</H1>
+      <H1 style="font-size: 34px">Stack Visualization</H1>
     </div>
     <div id="ip_div" style="display: inline-block; position: absolute">
       <label for="size" style="margin-left: 10px"
@@ -102,6 +119,7 @@
         placeholder="Enter Size of Stack"
       />
       <input
+        class="btn"
         type="button"
         value="Set Size"
         id="set-size"
@@ -112,8 +130,8 @@
         ><strong>Enter Value :</strong></label
       ><br />
       <input type="text" name="value" id="input" placeholder="Enter Value" />
-      <input type="button" value="Push" id="push" style="margin-left: -5px" />
-      <input type="button" value="Pop" id="pop" style="margin-left: -5px" />
+      <input class="btn" type="button" value="Push" id="push" style="margin-left: -5px" />
+      <input class="btn" type="button" value="Pop" id="pop" style="margin-left: -5px" />
       <p id="output"></p>
     </div>
 
@@ -125,7 +143,6 @@
       console.log(size);
       function setSize() {
         console.log(size);
-
         if (isNaN(size)) {
           displayOutput("Size of Stack set to 5 by default!");
           size = 5;
@@ -179,7 +196,7 @@
         let output = document.querySelector("#output");
         output.innerHTML = message;
         output.style.display = "block";
-        output.style.backgroundColor = "purple";
+        output.style.backgroundColor = "#4b50b9";
         output.style.color = "white";
         //showPopup(message);
       }

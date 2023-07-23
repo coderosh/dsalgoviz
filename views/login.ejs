@@ -11,6 +11,13 @@
     <link rel="icon" href="/images/title_logo.png" type="image/icon type" />
 
   <title>DSAlgoViz</title>
+  <style>
+
+#loginbtn:hover {
+  color: white;
+  background: #4b50b9;
+}
+  </style>
 </head>
 <body>
    <%- include("./partials/navbar.ejs", {page: "login"}) %>
@@ -58,7 +65,7 @@
                     
                   <div class="text-center text-lg-start mt-4 pt-2">
                     <!-- <form class="d-flex" action="home.html"> -->
-                    <button type="submit" class="btn login btn-lg">Login</button>
+                    <button id="loginbtn" type="submit" class="btn login btn-lg">Login</button>
                   <!-- </form> -->
                     <div>
                       <p></p>
@@ -70,7 +77,7 @@
             </div>
             <!-- Copyright -->
             <div class="cpr">
-              DSAlgoviz Copyright © 2023. All rights reserved.
+              DSAlgoViz Copyright © 2023. All rights reserved.
             </div>
             <!-- Copyright -->
     </main>

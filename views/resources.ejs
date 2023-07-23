@@ -205,6 +205,36 @@
             </div>
           </div>
         </div>
+        <br /><br />
+        <div class="toptext">
+          <h1 style="color: #353535">More Resources</h1>
+        </div>
+        <div class="more">
+          <!-- Uploaded Resources are shown here -->
+          <% uploads.forEach(upload => { %>
+
+          <div style="margin-bottom: 10px" class="more_file">
+            <div class="icon-fname">
+              <img
+                src="/images/files.png"
+                alt="files_icon"
+                width="50px"
+                height="50px"
+              />
+              <div class="fname"><%= upload %></div>
+            </div>
+            <div class="fbtns">
+              <a href="/uploads/<%= upload %>">
+                <button class="btn fbtn">Open</button></a
+              >
+              <a href="/uploads/<%= upload %>" download="questions.pdf">
+                <button class="btn fbtn">Download</button></a
+              >
+            </div>
+          </div>
+
+          <% }) %>
+        </div>
         <!-- Copyright -->
         <div class="cpr">DSAlgoviz Copyright © 2023. All rights reserved.</div>
         <!-- Copyright -->

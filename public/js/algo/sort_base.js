@@ -54,7 +54,7 @@ function createChart(data) {
     .attr("height", function (d) {
       return heightScale(d);
     })
-    .style("fill", "	rgb(0,255,255)");
+    .style("fill", "	#b1b3da");
 
   svg
     .selectAll("text")
